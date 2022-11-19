@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Drawing App Stable Diffusion</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <section class="tools-board">
+        <div class="row">
+          <label class="title">Shapes</label>
+          <ul class="options">
+            <li class="option tool" id="rectangle">
+              <img src="icons/rectangle.svg" alt="">
+              <span>Rectangle</span>
+            </li>
+            <li class="option tool" id="circle">
+              <img src="icons/circle.svg" alt="">
+              <span>Circle</span>
+            </li>
+            <li class="option tool" id="triangle">
+              <img src="icons/triangle.svg" alt="">
+              <span>Triangle</span>
+            </li>
+            <li class="option">
+              <input type="checkbox" id="fill-color">
+              <label for="fill-color">Fill color</label>
+            </li>
+          </ul>
+        </div>
+        <div class="row">
+          <label class="title">Options</label>
+          <ul class="options">
+            <li class="option active tool" id="brush">
+              <img src="icons/brush.svg" alt="">
+              <span>Brush</span>
+            </li>
+            <li class="option tool" id="eraser">
+              <img src="icons/eraser.svg" alt="">
+              <span>Eraser</span>
+            </li>
+          </ul>
+          <label class="title">Brush Size</label>
+          <input type="range" id="size-slider" min="1" max="100" value="5" oninput="this.nextElementSibling.value = this.value">
+          <output>5</output>
+        </div>
+        <div class="row colors">
+          <label class="title">Colors</label>
+          <ul class="options">
+            <li class="option"></li>
+            <li class="option selected"></li>
+            <li class="option"></li>
+            <li class="option"></li>
+            <li class="option">
+              <input type="color" id="color-picker" value="#4A98F7">
+            </li>
+          </ul>
+        </div>
+        <div class="row buttons">
+          <button class="clear-canvas">Clear Canvas</button>
+          <button class="save-img">Save As Image</button>
+        </div>
+      </section>
+      <section class="drawing-board">
+        <canvas></canvas>
+      </section>
+    </div>
+    <div class="container2">
+      <section class="output-board">
+        <img src="img_girl.jpg" alt="Stable Diffusion output"> BIG TEXT TO COME BACK AND EDIT THIS
+      </section>
+      <section class="diffusion-parameter-board">
+        <div class="row">
+          <label class="row">Prompt</label>
+          <input class ="prompt-textbox" type="text" id="prompt" name="prompt">
+        </div>
+        <div class="row">          
+          <label class="row">Strength</label>
+          <input type="range" id="strength-slider" min="0" max="1" step = "0.1" value="0.5" oninput="this.nextElementSibling.value = this.value">
+          <output>0.5</output>
+        </div>
+        <div class="row buttons">
+          <button class="generate-img">Generate Image</button>
+          <button class="save-img">Save As Image</button>
+        </div>
+    </div>
+  </body>
+</html>
